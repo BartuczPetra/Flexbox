@@ -20,12 +20,23 @@ main{
     display: flex;
     flex-wrap:wrap;/*megtöri a hosszú sorokat*/
     flex-direction: row;
+    align-items: baseline; /*elemeken belüli tartalom elhelyezkedése*/
+    justify-content: center;/*elemek elhelyezése*/
+    align-content: stretch;
 }
 header, nav, footer{
     flex:0 0 100%; /*a 0-val engedélyezem az átméretezést*/
     /*width: 100%;*/
 }
 article{
-    flex: 1 0 calc(33.33333% - 10px);/*kiszámolja a 33%-át*/
+    flex: 0 0 calc(33.33333% - 10px);/*kiszámolja a 33%-át*/
     /*width: calc(33.33333% - 10px);*/
+}
+
+main article:nth-child(5){
+    color:red;
+    order: -1;
+}
+header, nav{
+    order: -10;
 }
